@@ -1,0 +1,43 @@
+
+@baseUrl = http://localhost:3333
+
+GET {{baseUrl}}/repositories HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST {{baseUrl}}/repositories HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title" : "My Repository",
+  "url" : "http://localhost:3333/my-repository",
+  "techs" : ["nodejs", "javascript"]
+}
+
+###
+
+POST  {{baseUrl}}/repositories/b769635c-f30c-4afa-bcdd-7f73aa3d8d07/like HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+
+PUT {{baseUrl}}/repositories/"98a19d67-58af-48fd-8906-1c021bd25dbf HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title" : "My Repository",
+  "url" : "http://localhost:3333/my-repository",
+  "techs" : ["nodejs", "javascript", "Rest"],
+  "likes" : 15
+}
+
+####
+
+DELETE {{baseUrl}}/repositories/1c869a9f-7ae2-4104-969d-60d85b02d92c HTTP/1.1
+Content-Type: application/json
+Accept: application/json
