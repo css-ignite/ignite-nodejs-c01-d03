@@ -58,46 +58,58 @@ app.post('/repositories', (request, response) => {
   (PUT) /repositories/:id
 */
 
-app.put('/repositories/:id', middlewareFindRepositoryByIndex, (request, response) => {
-  const { id } = request.params
-  const { title, url, techs } = request.body
-  const { repositoryIndex } = request
+app.put(
+  '/repositories/:id',
+  middlewareFindRepositoryByIndex,
+  (request, response) => {
+    const { id } = request.params
+    const { title, url, techs } = request.body
+    const { repositoryIndex } = request
 
-  const repository = {
-    id,
-    title,
-    url,
-    techs,
-    likes: repositories[repositoryIndex].likes
+    const repository = {
+      id,
+      title,
+      url,
+      techs,
+      likes: repositories[repositoryIndex].likes
+    }
+
+    repositories[repositoryIndex] = repository
+
+    return response.json(repository)
   }
-
-  repositories[repositoryIndex] = repository
-
-  return response.json(repository)
-})
+)
 
 /*
   (DELETE) /repositories/:id
 */
 
-app.delete('/repositories/:id', middlewareFindRepositoryByIndex, (request, response) => {
-  const { repositoryIndex } = request
+app.delete(
+  '/repositories/:id',
+  middlewareFindRepositoryByIndex,
+  (request, response) => {
+    const { repositoryIndex } = request
 
-  repositories.splice(repositoryIndex, 1)
+    repositories.splice(repositoryIndex, 1)
 
-  return response.status(204).send()
-})
+    return response.status(204).send()
+  }
+)
 
 /*
   (PATCH) /repositories/:id/like
 */
 
-app.post('/repositories/:id/like', middlewareFindRepositoryByIndex, (request, response) => {
-  const { repositoryIndex } = request
+app.post(
+  '/repositories/:id/like',
+  middlewareFindRepositoryByIndex,
+  (request, response) => {
+    const { repositoryIndex } = request
 
-  const likes = ++repositories[repositoryIndex].likes
+    const likes = ++repositories[repositoryIndex].likes
 
-  return response.json({ likes })
-})
+    return response.json({ likes })
+  }
+)
 
 module.exports = app

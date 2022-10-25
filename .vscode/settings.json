@@ -1,14 +1,6 @@
 {
-    "debug.javascript.autoAttachFilter": "always",
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+  "debug.javascript.autoAttachFilter": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

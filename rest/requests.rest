@@ -19,13 +19,13 @@ Accept: application/json
 
 ###
 
-POST  {{baseUrl}}/repositories/b769635c-f30c-4afa-bcdd-7f73aa3d8d07/like HTTP/1.1
+POST  {{baseUrl}}/repositories/387012a0-af07-4ea2-b2ff-3192480b0cff/like HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-PUT {{baseUrl}}/repositories/"98a19d67-58af-48fd-8906-1c021bd25dbf HTTP/1.1
+PUT {{baseUrl}}/repositories/387012a0-af07-4ea2-b2ff-3192480b0cff HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 
