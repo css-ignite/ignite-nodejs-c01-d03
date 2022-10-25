@@ -74,7 +74,6 @@ app.post("/repositories", (request, response) => {
 
   /*
     A correção ocorreu aqui!
-    Esta linha não existia no código original.
   */
 
   repositories.push(repository);
@@ -96,6 +95,10 @@ app.put("/repositories/:id", middlewareFindRepositoryByIndex, (request, response
   const { title, url, techs } = request.body;
   const { repositoryIndex } = request;
 
+  /*
+    A correção ocorreu aqui!
+  */
+  
   const repository = {
     id,
     title,
@@ -119,6 +122,10 @@ app.put("/repositories/:id", middlewareFindRepositoryByIndex, (request, response
 ```js
 app.delete("/repositories/:id", middlewareFindRepositoryByIndex, (request, response) => {
   const { repositoryIndex } = request;
+  
+  /*
+    A correção ocorreu aqui!
+  */
 
   repositories.splice(repositoryIndex, 1);
 
@@ -136,8 +143,16 @@ app.delete("/repositories/:id", middlewareFindRepositoryByIndex, (request, respo
 ```js
 app.post("/repositories/:id/like", middlewareFindRepositoryByIndex, (request, response) => {
   const { repositoryIndex } = request;
+  
+  /*
+    A correção ocorreu aqui!
+  */
 
   const likes = ++repositories[repositoryIndex].likes;
+  
+  /*
+    A correção ocorreu aqui!
+  */
 
   return response.json({ likes: likes });
 });
